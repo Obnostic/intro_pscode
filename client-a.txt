@@ -2,3 +2,14 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+int answer=0 ; guess=0 ; trial=0
+boolean correct = false
+
+answer = RND (1 through 10)
+do until correct or trial = 2
+	{  print "what number am I guessing? 1 through 10 only"
+	   input (guess)
+	   correct =  {answer=guess}
+	   if correct {print "Yes!"} else {print "No!!"]
+	   trial = trial+1
+	}
