@@ -32,16 +32,16 @@ Travelpoint = 0
 //and then collect # of characters requested);  str: convert integer to string
 Vertdistance = int((stripchar,1,1(str(startpoint))) – int(stripchar,1,1(str(destination))))
 Horizdistance = int((stripchar,2,2(str(startpoint))) – int(stripchar,2,2(str(destination))))
-For movingvert=1 to vertdistance  //first goes up
+For movingvert=1 to vertdistance  //first goes up or down
 	 {
 If vertdistance>=0 then travelpoint = travelpoint+1 else travelpoint = travelpoint-1
 	Print “You are now at grid “  ((travelpoint x 100)+ (int(stripchar,2,2(str(destination)))))
 	}
 Travelpoint2=0
-For movinghoriz= 1 to horizdistance
-{
-If horizdistance>=0 then travelpoint2 = travelpoint2+1 else travelpoint2 = travelpoint2-1
-	Print “You are now at grid “  ((travelpoint x 100)+ (travelpoint2))
+For movinghoriz= 1 to horizdistance //then goes across left or right
+	{
+	If horizdistance>=0 then travelpoint2 = travelpoint2+1 else travelpoint2 = travelpoint2-1
+		Print “You are now at grid “  ((travelpoint x 100)+ (travelpoint2))
 	}
 
  Print “you are now at your destination grid”
