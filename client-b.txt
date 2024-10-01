@@ -20,28 +20,29 @@ Track for 3 destinations is:
 105 to 908.  205 305 405 505 605 705 905 905 906 907 908
 Convert to text and seperate first from other 2 digits and reconvert to int.  1st digit-vertical move
 2nd 2 digits - horizontal move
-
+Much seemingly unnecessary code is in anticipation of future development for going to the destination from any origin
+***********************
 Int startpoint = 105, travelpoint, destination, vertdistance, horizdistance, movingvert, movinghoriz
 
 Print “starting from point 105 where would you like to go”?
 User.input(destination)
-Travelpoint = 0
+Travelpoint = 1
 
 (check destination for out of bounds, return to question if true)
 //convert text and strip number elements stripchar: start with the first character in the position
 //and then collect # of characters requested);  str: convert integer to string
-Vertdistance = int((stripchar,1,1(str(startpoint))) – int(stripchar,1,1(str(destination))))
-Horizdistance = int((stripchar,2,2(str(startpoint))) – int(stripchar,2,2(str(destination))))
+Vertdistance = int(stripchar,1,1(str(destination))) - int(stripchar,1,1(str(startpoint)))
+Horizdistance = int(stripchar,2,2(str(destination))) - int(stripchar,2,2(str(startpoint)))
 For movingvert=1 to vertdistance  //first goes up or down
 	 {
-If vertdistance>=0 then travelpoint = travelpoint+1 else travelpoint = travelpoint-1
-	Print “You are now at grid “  ((travelpoint x 100)+ (int(stripchar,2,2(str(destination)))))
+	If vertdistance>=0 then travelpoint = travelpoint+1 else travelpoint = travelpoint-1
+	Print “You are now at grid “  ((travelpoint x 100)+ (int(stripchar,2,2(str(startpoint)))))
 	}
 Travelpoint2=0
-For movinghoriz= 1 to horizdistance //then goes across left or right
+For movinghoriz = 1 to horizdistance //then goes across left or right
 	{
 	If horizdistance>=0 then travelpoint2 = travelpoint2+1 else travelpoint2 = travelpoint2-1
-		Print “You are now at grid “  ((travelpoint x 100)+ (travelpoint2))
+	Print “You are now at grid “  ((travelpoint x 100)+ (int(stripchar,2,2(str(startpoint))))+ travelpoint2)
 	}
 
  Print “you are now at your destination grid”
